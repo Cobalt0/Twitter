@@ -12,7 +12,7 @@ import br.com.desafio.twitter.OrdenaListaTwitter;
 import br.com.desafio.twitter.RecuperaListaTwitter;
 import br.com.desafio.twitter.DAO.Tweet;
 
-public class MostMentions {
+public class MostMentions{
 	@Path("/most_mentions")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
