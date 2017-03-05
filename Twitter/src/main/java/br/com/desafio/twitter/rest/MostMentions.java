@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -22,10 +23,11 @@ public class MostMentions{
 		
 		//recupera a lista de tweets
 		List<Tweet> listaTwitter = RecuperaListaTwitter.getObjeto(urlWebService, usuario);
+		GenericEntity <List<Tweet>> ge = new GenericEntity <List<Tweet>>(listaTwitter) {};
 		//ordena a lista de tweets
 		OrdenaListaTwitter.ordenaTweet(listaTwitter);
 		
 		
-		return Response.status(Response.Status.OK).entity(listaTwitter).build();
+		return Response.status(Response.Status.OK).entity(ge).build();
 	}
 }
